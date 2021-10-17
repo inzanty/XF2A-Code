@@ -11,8 +11,7 @@ class RuleSet extends XFCP_RuleSet
     public function addDefaultTags()
     {
         parent::addDefaultTags();
-
-        $this->tags['code']['supportOptionKeys'] = RuleSet::OPTION_KEYS_BOTH;
+        $this->tags['code']['supportOptionKeys'] = self::OPTION_KEYS_BOTH;
     }
 
     public function parseValidateCode($tag, $option)
@@ -22,7 +21,7 @@ class RuleSet extends XFCP_RuleSet
             return parent::parseValidateCode($tag, $option);
         }
 
-        if (array_key_exists('lang', $option) && $option['lang'] == 'rich')
+        if (($option['lang'] ?? '') == 'rich')
         {
             return true;
         }

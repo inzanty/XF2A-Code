@@ -4,21 +4,6 @@ var CMTV_Code = window.CMTV_Code || {};
 {
     "use strict";
 
-    // ############################## COPY ACTION ##############################
-
-    CMTV_Code.CodeBlock_Copy = new Clipboard('.bbCodeBlock--code .action--copy', {
-        target: function (a)
-        {
-            return $(a).closest('.bbCodeBlock--code').find('code').get(0);
-        }
-    });
-
-    CMTV_Code.CodeBlock_Copy.on('success', function (a)
-    {
-        a.clearSelection();
-        XF.flashMessage(XF.phrase('CMTV_Code_copied'), 1500);
-    });
-
     // ############################## EXPAND ACTION ##############################
 
     CMTV_Code.CodeBlock_Expand = XF.Click.newHandler({

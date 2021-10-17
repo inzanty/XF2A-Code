@@ -37,7 +37,5 @@ class EventsListener
             if ($languages[$lang] === null) continue;
             $languages[$lang] = array_merge_recursive($languages[$lang], $options);
         }
-
-        //print_r($languages['latex']['mode']);
     }
 }
